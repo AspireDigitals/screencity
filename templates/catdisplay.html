@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="section-space80">
+    <div class="container">
+       
+        <div class="row">
+            
+            {% for script in scripts reversed %}
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="post-block mb30">
+                    <div class="bg-white pinside40 outline">
+                        <p class="meta"><span class="meta-date">{{script.category}}</span>
+                        <h2><a href="{{script.title}}" class="title">{{script.title}}</a></h2>
+                        <p class="meta"><span class="meta-date">{{script.subcategory}}</span><span class="meta-author">By<a href="/professionals">{{script.seller}}</a></span></p>
+                        <p>{{script.synopsis}}</p>
+                        <p class="meta"><span class="meta-date">selling at GhC: {{script.price}} </span><span class="meta-author">Posted on {{script.created_at}}</span></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+
+{% include 'footer.html' %}
+
+{% endblock content %}

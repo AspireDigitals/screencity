@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="page-breadcrumb">
+            <ol class="breadcrumb">
+              <li><a href="film_scripts.html">{{script.category}}</a></li>
+              <li class="active">{{script.title}}</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="bg-white pinside30">
+            <div class="row align-items-center">
+              <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                <h1 class="page-title">{{script.title}}</h1>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="btn-action">
+                  <a href="become_seller.html" class="btn btn-secondary">Become a seller</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub-nav" id="sub-nav">
+            <ul class="nav nav-justified">
+              <li class="nav-item">
+                <a href="contact-us.html" class="nav-link">Give me call back</a>
+              </li>
+              <li class="nav-item">
+                <a href="hire_professionals.html" class="nav-link">Hire Professional</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" ">
+    <!-- content start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="wrapper-content bg-white">
+            <div class="about-section p-5">
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                  <h2 class="mb30">Who We Are?</h2>
+                  <p class="lead mb30">
+                    SCN network is a market place for movie scripts where you can buy, sell, or hire a professional screenplay writer It takes less than 2 minutes to post a gig on SCN.
+                  </p>
+                  <p>
+                    You can sign up for a free account and post ads easily every time. Script city Network does not specialize in any specific category - here you can buy and sell items in all aspect of film and writing/script categories. We also carefully review all ads that are being published, to make sure the quality is up to our standards.
+                  </p>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="mb60">
+                    <h2 class="mb30">What We Offer?</h2>
+                    <p class="lead mb30">
+                      As a global brand, SCN exists on the core brand values of Professionalism, Leadership, Excellence, Integrity, Relationships, and Innovation. 
+                    </p>
+                    <p>
+                      We pride ourselves on our ability to make the seemingly impossible possible, connecting people and opportunities and enriching lives through our platform
+                    </p>
+                  </div>
+                </div>
+                <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                  <div class="text-center section-space80">
+                    <h2>Our Vision &amp; Mission</h2>
+                    <p>
+                      our mission is to create a global connection between film writers and film makers. We believe every quality script needs to be read or bought by a producer/director. Our aim is to curtail the difficulties writers go through to get their script to be read/bought by a producer/director
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+{% endblock content %}
+
+  

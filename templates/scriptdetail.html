@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="page-breadcrumb">
+            <ol class="breadcrumb">
+              <li><a href="/scripts">{{script_object.category}}</a></li>
+              <li class="active">{{script_object.title}}</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="bg-white pinside30">
+            <div class="row align-items-center">
+              <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                <h1 class="page-title">{{script_object.title}}</h1>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="btn-action">
+                  <a href="/sell" class="btn btn-secondary">Become a seller</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" ">
+    <!-- content start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="wrapper-content bg-white">
+            <div class="about-section p-5">
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                  <h2 class="mb30">Synopsis</h2>
+                  <p class="lead mb30">
+                    {{script_object.synopsis}}
+                  </p>
+
+                  <h2 class="mb30">Selling at GhC {{script_object.price}}</h2>
+                  <p class="mb30 meta"><span class="mb30 meta-date">{{script_object.subcategory}}</span><span class="meta-author">By<a href="/professionals">{{script_object.seller}}</a></span></p>
+                  <p class="mb30 meta"><span class="mb30 meta-date">film type: {{script_object.filmtype}} </span><span class="meta-author">Posted on{{script_object.created_at}}</span></p>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="mb60">
+                    <h2 class="mb30">Logline</h2>
+                    <p class="lead mb30">
+                      {{script_object.logline}}
+                    </p>
+                    <p>
+                      <h2 class="mb30">Download</h2><a download href="{{script_object.firstPage.url}}">{{script_object.title}}</a>
+                    </p>
+
+                   
+                  </div>
+
+
+                </div>
+                <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                  <div class="text-center section-space80">
+                    <h2>Treatment</h2>
+                    <p>
+                      {{script_object.treatment}}
+                    </p>
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+{% endblock content %}
+
+  

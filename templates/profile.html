@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="page-breadcrumb">
+            <ol class="breadcrumb">
+              <li><a href="/professionals">{{user_profile.user}}</a></li>
+              <li class="active">{{user_profile.user}}</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="bg-white pinside30">
+            <div class="row align-items-center">
+              <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                <h1 class="page-title">{{user_profile.user}}</h1>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="btn-action">
+                  <a href="/signup" class="btn btn-secondary">Join Screen City</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" ">
+    <!-- content start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="wrapper-content bg-white">
+            <div class="about-section p-5">
+              
+              <div class="team-content text-center">
+                <small class="designation">User Name:</small>
+                <h2 class="mb-0">{{user_profile.user}}</h2>
+                <small class="designation">Contact</small>
+                <p>
+                  {{user_profile.number}}
+                </p>
+            </div>
+                <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                  <div class="text-center section-space80">
+                    <small class="designation">User Biography</small>
+                    <p>
+                      {{user_profile.bio}}
+                    </p>
+                   
+                    <small class="designation">Country</small>
+                    <p>
+                      {{user_profile.country}}
+                    </p>
+                    <small class="designation">State</small>
+                    <p>
+                      {{user_profile.state}}
+                    </p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+{% endblock content %}
+
+  
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="wrapper-content bg-white p-3 p-lg-5">
+              
+              <div class="row">
+                  {% for professional in professionals %}
+                 
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                  <div class="team-block mb-5">
+                      <div class="team-img mb-3"> <img src="{{professional.profileimg.url}}" alt="Professional {{professional.talent}}" class="img-fluid"> </div>
+                      <div class="team-content text-center">
+                          <h3 class="mb-0"><a href="{{professional.name}}">{{professional.name}}</a></h3>
+                          <small class="designation">{{professional.talent}}</small>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+                 
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

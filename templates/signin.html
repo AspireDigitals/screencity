@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container "  offset="3" id="account-section">
+    <div class="row">
+        <div class="col-md-3"></div>
+     <div class="col-md-6">
+         <h1 class="lg:text-3xl text-xl font-semibold mb-6 text-center"> Sign in to Account</h1>
+         <!--<p class="mb-2 text-black text-lg"> Register to manage your account </p>-->
+ 
+         <div>
+             <style>
+                 h5 {
+                     color: red;
+                 }
+             </style>
+             {% for message in messages %}
+             <h5 class="text-center">{{message}}</h5>
+             {% endfor %}
+         </div>
+         <p class="text-base text-center"><a href="/" class=""> Go Home </a></p>
+         <form action="" method="POST">
+             {% csrf_token%}
+ 
+             <input type="text" name="username" placeholder="Username" class="form-control border-0 shadow-none" id="email">
+             <input type="password" name="password" placeholder="Password" class="form-control border-0 shadow-none" id="email">
+    
+            
+             <button type="submit" class="btn btn-secondary">Sign in</button>
+             <div class="text-center mt-5 space-x-2">
+                 <p class="text-base"> Don't have an account? <a href="/signup"> Sign up </a></p>
+             </div>
+         </form>
+     </div>
+     <div class="col-md-3"></div>
+    </div>
+ </div>
+
+
+{% endblock content %}
+

@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+
+
+<div class="section-space80 bg-gradient call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class=" offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="text-center">
+                    <!-- section title start-->
+                    <h1 class="text-white">Hire Professionals on Screen City Network</h1>
+                    <p class="text-white">Hire professionals with proven business experience.</p>
+                    <a href="hireprofessional" class="btn btn-secondary">Hire Professionals</a>
+                </div>
+                <!-- /.section title start-->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'category.html' %}
+
+
+<div class="section-space80">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 offset-md-2 col-md-8 col-sm-12 col-12">
+                <div class="mb60 text-center section-title">
+                    <!-- section title start-->
+                    <h1>Featured Talents</h1>
+                    <p>We will match you with a professional for your professional need.</p>
+                </div>
+                <!-- /.section title start-->
+            </div>
+        </div>
+        <div class="row">
+            {% for talent in talents %}
+
+            <div class="col-xl-4 col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="service-img-box mb30 text-center outline">
+                    <div class="service-content bg-white pinside20">
+                        <h2 class="mb-0"><a href="/professionals" class="title">{{talent.title}}</a></h2>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include 'featured.html' %}
+
+<div class="cta">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 offset-md-2 col-md-8 col-sm-12 col-12 ">
+                <div class="mb60 text-center section-title text-white">
+                    <!-- section title start-->
+                    <h1 class="text-white">Our Major Services</h1>
+                    <p>We understand how to effectively guide you through script writing and movie requirements </p>
+                </div>
+                <!-- /.section title start-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="number-block text-white">
+                    <div class="mb30"><i class="icon-command  icon-4x icon-white"></i></div>
+                    <h3 class="text-white mb30">Buying and selling of scripts</h3>
+                    <p>We have professionals who are ready to support your with quality scripts and screenplays.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="number-block text-white">
+                    <div class="mb30"><i class="icon-calculator  icon-4x icon-white"></i></div>
+                    <h3 class="text-white mb30">Hire professionals</h3>
+                    <p>We have professionals who are ready to support your with quality scripts and screenplays.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="number-block text-white">
+                    <div class="mb30"><i class="icon-dialog  icon-4x icon-white"></i></div>
+                    <h3 class="text-white mb30">Get movie updates</h3>
+                    <p>We have professionals who are ready to support your with quality scripts and screenplays.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-space80 bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="mb60 text-center section-title">
+                    <!-- section title start-->
+                    <h1 class="text-white">Frequently Asked Questions</h1>
+                    <p class="text-white"> Our vision is to become a leading global brand to provide script writing solutions to film writers and film makers .</p>
+                </div>
+                <!-- /.section title start-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="accordion" id="faqExample">
+                    <div class="card mb-1 border-0">
+                        <div class="card-header" id="faqOne">
+                            <h4 class="mb-0">
+                                <a href="#!" class="" data-toggle="collapse" data-target="#faqcollapseOne" aria-expanded="true" aria-controls="faqcollapseOne">
+                                    <i class="fa fa-plus-circle mr-2"></i>Mission Statement</a>
+                            </h4>
+                        </div>
+                        <div id="faqcollapseOne" class="collapse show" aria-labelledby="faqOne" data-parent="#faqExample">
+                            <div class="card-body">
+                                our mission is to create a global connection between film writers and film makers. We believe every quality script needs to be read or bought by a producer/director. Our aim is to curtail the difficulties writers go through to get their script to be read/bought by a producer/director
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-1 border-0">
+                        <div class="card-header" id="faqTwo">
+                            <h4 class="mb-0">
+                                <a href="#!" class="collapsed" data-toggle="collapse" data-target="#faqcollapseTwo" aria-expanded="false" aria-controls="faqcollapseTwo">
+                                    <i class="fa fa-plus-circle mr-2"></i>Core Values</a>
+                            </h4>
+                        </div>
+                        <div id="faqcollapseTwo" class="collapse" aria-labelledby="faqTwo" data-parent="#faqExample">
+                            <div class="card-body">
+                                As a global brand, SCN exists on the core brand values of Professionalism, Leadership, Excellence, Integrity, Relationships, and Innovation. We pride ourselves on our ability to make the seemingly impossible possible, connecting people and opportunities and enriching lives through our platform
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-1 border-0">
+                        <div class="card-header" id="faqThree">
+                            <h4 class="mb-0">
+                                <a href="#!" class="collapsed" data-toggle="collapse" data-target="#faqcollapseThree" aria-expanded="false" aria-controls="faqcollapseThree">
+                                    <i class="fa fa-plus-circle mr-2"></i>Copyright infringements</a>
+                            </h4>
+                        </div>
+                        <div id="faqcollapseThree" class="collapse" aria-labelledby="faqThree" data-parent="#faqExample">
+                            <div class="card-body">
+                                SCN’s content is based on User Generated Content (UGC). SCN does not check user uploaded/created content for violations of copyright or other rights.
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock content %}

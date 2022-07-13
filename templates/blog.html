@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="section-space80">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="mb60 text-center section-title">
+                    <!-- section title start-->
+                    <h1>Latest News and Updates</h1>
+                    <p> Our mission is to deliver quality scripts.</p>
+                </div>
+                <!-- /.section title start-->
+            </div>
+        </div>
+        <div class="row">
+            {% for blog in blogs reversed %}
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="team-block mb-5">
+                    <div class="team-img mb-3">
+                        <a href="blog/{{blog.headline}}"><img src="{{blog.image.url}}" alt="" class="img-fluid"></a>
+                    </div>
+                    <div class="team-content text-center">
+                        <a href="blog/{{blog.headline}}"><h3 class="mb-0">{{blog.headline}}</h3></a>
+                        <small class="designation">{{blog.story}}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+{% endblock content %}
+

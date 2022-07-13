@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="header-topbar d-none d-lg-block ">
+    <!-- top-bar -->
+    <div class="container text-center">
+        <div class="row text-center">
+                <p class="mail-text">Welcome to Screen City Network, Connecting film writers to filmmakers</p>
+        </div>
+    </div>
+</div>
+<!-- /.top-bar -->
+<div class="sticky-top bg-white">
+    <div class="container py-3">
+        <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="/"><img src="{% static  'images/logo.png' %}" alt="Welcome to Screen City Network"></a>
+                </div>
+            </div>
+            <!-- logo -->
+            {% if request.user.is_authenticated %}
+            <div class="col-xl-9 col-lg-9 col-md-6 col-sm-6 col-6 ">
+                <div class="header-action d-flex justify-content-end">
+                   
+                    <a href="/logout" class="btn">Logout</a>
+                    <a href="hireprofessional" class="btn ">{{user.username}}</a>   
+                </div>
+            </div>
+            {% else %}
+            <div class="col-xl-9 col-lg-9 col-md-6 col-sm-6 col-6 ">
+              <div class="header-action d-flex justify-content-end">
+                  <a href="/signin" class="btn btn-primary btn-sm  d-none d-xl-block d-lg-block">Account Sign in</a>
+                  <a href="/signup" class="btn btn-secondary btn-sm ">Account Sign up</a>
+              </div>
+          </div>
+            {% endif %}
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 py-lg-0 border-top border-bottom">
+        <div class="container">
+            <a class="d-xl-none d-lg-none" href="#!">Menu</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar top-bar mt-0"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-justified w-lg-75 mt-2 mt-lg-0">
+                    <li class="nav-item  border-left-lg">
+                        <a class="nav-link " id="navbarHome" href="/" aria-haspopup="true" aria-expanded="false">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item   border-left-lg">
+                        <a class="nav-link" id="navbarProduct" href="/scripts" aria-haspopup="true" aria-expanded="false">
+                            Scripts
+                        </a>
+                    </li>
+                   
+                    <li class="nav-item   border-left-lg">
+                        <a class="nav-link" href="/professionals" id="navbarFeatures" role="button"  aria-haspopup="true" aria-expanded="false">
+                            Professionals
+                        </a>
+                    </li>
+                    <li class="nav-item  border-left-lg">
+                        <a class="nav-link" href="/hireprofessional" id="navbarBlog" role="button"  aria-haspopup="true" aria-expanded="false">
+                            Hire
+                        </a>
+                    </li>
+                    <li class="nav-item  border-left-lg">
+                        <a class="nav-link" href="/about" id="navbarBlog" role="button"  aria-haspopup="true" aria-expanded="false">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item  border-left-lg">
+                        <a class="nav-link" href="/blog" id="navbarBlog" role="button"  aria-haspopup="true" aria-expanded="false">
+                            Blog
+                        </a>
+                    </li>
+
+                   
+                   
+                    <li class="nav-item  border-right-lg border-left-lg">
+                        <a class="nav-link " href="/sell">
+                            Sell Script
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <form action="/search" method="POST">
+
+            {% csrf_token %}
+        <div class="left-side">
+            
+            <!--<div class="header_search">-->
+                <input type="search" name="username" placeholder="Search for username.." class="border-0 shadow-none" id="email">
+                <button class="btn ">Search</button>
+            <!--</div>-->
+        </div>
+    </form>
+    </nav>
+</div>
+
+{% endblock content %}
+

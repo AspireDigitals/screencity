@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="container "  offset="3" id="account-section">
+       <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1 class="lg:text-3xl text-xl font-semibold mb-6 text-center"> Become a Seller</h1>
+            <!--<p class="mb-2 text-black text-lg"> Register to manage your account </p>-->
+    
+            <div>
+                <style>
+                    h5 {
+                        color: red;
+                    }
+                </style>
+                {% for message in messages %}
+                <h5 class="text-center">{{message}}</h5>
+                {% endfor %}
+            </div>
+            <p class="text-base text-center"><a href="/" class=""> Go Home </a></p>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token%}
+    
+                <select class="form-control border-0 shadow-none" id="email" name="country" required>
+                    <option selected disabled="true">-- Select Country --</option>
+                    {% for country in countries %}
+                    <option>{{country.name}}</option>
+                    {% endfor %}
+                </select>
+
+                <select class="form-control border-0 shadow-none" id="email" name="state" required>
+                    <option selected disabled="true">-- Select State --</option>
+                    {% for country in countries %}
+                    <option>{{country.state}}</option>
+                    {% endfor %}
+                </select>
+
+
+                <select class="form-control border-0 shadow-none" id="email" name="category" required>
+                    <option selected disabled="true">-- Select Category --</option>
+                    {% for category in categorys %}
+                    <option >{{category.title}}</option>
+                    {% endfor %}
+                </select>
+                <!--<input type="text" name="category" placeholder="Script Category" class="form-control border-0 shadow-none" id="email">-->
+                <select class="form-control border-0 shadow-none" id="email" name="subcategory" required>
+                    <option selected disabled="true">-- Select Sub-Category --</option>
+                    {% for subcategory in subcategorys %}
+                    <option >{{subcategory.title}}</option>
+                    {% endfor %}
+                </select>
+                <select class="form-control border-0 shadow-none" id="email" name="filmtype" required>
+                    <option selected disabled="true">-- Select Film Type --</option>
+                    {% for filmtype in filmtypes %}
+                    <option >{{filmtype.title}}</option>
+                    {% endfor %}
+                </select>
+
+                <input type="text" name="title" placeholder="Film Title" class="form-control border-0 shadow-none" id="email" required>
+                <input type="text" name="seller" placeholder="{{user.username}}" selected class="form-control border-0 shadow-none" id="email" required>
+
+                <textarea type="text" name="synopsis" placeholder="Synopsis" class="form-control border-0 shadow-none" id="email" rows="4" cols="50" required></textarea>
+                <textarea type="text" name="logline" placeholder="Film Logline" class="form-control border-0 shadow-none" id="email" rows="4" cols="50" required></textarea>
+             
+                <textarea type="text" name="treatment" placeholder="Film Treatment" class="form-control border-0 shadow-none" id="email" rows="4" cols="50"></textarea>
+             
+                <input type="number" name="price" placeholder="Price" class="form-control border-0 shadow-none" id="email" required>
+                <input type="file" name="firstpage" tooltip="Upload Script" class="form-control border-0 shadow-none" id="email">
+                <input type="number" name="pagecount" placeholder="Page Count" class="form-control border-0 shadow-none" id="email" required>
+               
+                <button type="submit" class="btn btn-secondary">Submit Script </button>
+               
+                
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+       </div>
+    </div>
+
+
+
+{% endblock content %}
+

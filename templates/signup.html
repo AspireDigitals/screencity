@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="container "  offset="3" id="account-section">
+       <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <h1 class="lg:text-3xl text-xl font-semibold mb-6 text-center"> Sign up for new Account</h1>
+            <!--<p class="mb-2 text-black text-lg"> Register to manage your account </p>-->
+    
+            <div>
+                <style>
+                    h5 {
+                        color: red;
+                    }
+                </style>
+                {% for message in messages %}
+                <h5 class="text-center">{{message}}</h5>
+                {% endfor %}
+            </div>
+            <p class="text-base text-center"><a href="/" class=""> Go Home </a></p>
+            <form action="" method="POST">
+                {% csrf_token%}
+    
+                <select class="form-control border-0 shadow-none" id="email" name="country" required>
+                    <option selected disabled="true">-- Select Country --</option>
+                    {% for country in countries %}
+                    <option>{{country.name}}</option>
+                    {% endfor %}
+                </select>
+
+                <select class="form-control border-0 shadow-none" id="email" name="state" required>
+                    <option selected disabled="true">-- Select State --</option>
+                    {% for country in countries %}
+                    <option>{{country.state}}</option>
+                    {% endfor %}
+                </select>
+
+                <input type="email" name="email" placeholder="Email" class="form-control border-0 shadow-none" id="email">
+                <input type="text" name="username" placeholder="Username" class="form-control border-0 shadow-none" id="email">
+                <input type="date" name="dateofbirth" placeholder="Email" class="form-control border-0 shadow-none" id="email">
+                <input type="text" name="number" placeholder="Enter Number" class="form-control border-0 shadow-none" id="email">
+                <textarea type="text" name="bio" placeholder="User Biography" class="form-control border-0 shadow-none" id="email" required></textarea>
+                
+                <input type="password" name="password" placeholder="Password" class="form-control border-0 shadow-none" id="email">
+                <input type="password" name="password2" placeholder="Confirm Password" class="form-control border-0 shadow-none" id="email">
+               
+                <button type="submit" class="btn btn-secondary">Sign up</button>
+                <div class="text-center mt-5 space-x-2">
+                    <p class="text-base"> Do you have an account? <a href="/signin"> Login </a></p>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+       </div>
+    </div>
+
+
+
+{% endblock content %}
+

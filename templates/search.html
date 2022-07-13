@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrapper-content bg-white p-3 p-lg-5">
+                
+                <div class="row">
+                    {% for users in username_profile_list %}
+                   
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="post-block mb30">
+                            <div class="bg-white pinside40 outline">
+                                <h2><a href="/profile/{{users.user}}" class="title">{{users.user}}</a></h2>
+                                <p>{{users.number}}</p>
+                                
+                                <p class="meta">State: <span class="meta-date">{{users.state}}</span>From:<span class="meta-date">{{users.country}}</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                   
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% include 'footer.html' %}
+
+{% endblock content %}

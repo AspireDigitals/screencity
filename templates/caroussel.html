@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="slider" id="slider">
+    <!-- slider -->
+    <div class="slider-gradient-img"><img src="{% static  './images/slider-2.jpg' %}" alt="Welcome to Screen City Network" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="slider-captions">
+                        <!-- slider-captions -->
+                        <h1 class="slider-title">Welcome to Screen City Network</h1>
+                        <p class="slider-text d-none d-xl-block d-lg-block d-md-block">SCN is a market place for selling and buying of movie scripts.
+                            <br>
+                        <a href="about.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                    <!-- /.slider-captions -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="slider-gradient-img"><img src="{% static  './images/slider-2.jpg' %}" alt="Connecting film writers to filmmakers" class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="slider-captions">
+                            <!-- slider-captions -->
+                            <h1 class="slider-title">Connecting film writers to filmmakers</h1>
+                            <p class="slider-text d-none d-xl-block d-lg-block d-md-block"> SCN is a platform where you can hire people.</p>
+                            <a href="signup.html" class="btn btn-secondary ">Join US</a>
+                        </div>
+                        <!-- /.slider-captions -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="slider-gradient-img"><img src="{% static  './images/slider-1.jpg' %}" alt="Your warehouse of quality screenplays" class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="slider-captions">
+                            <!-- slider-captions -->
+                            <h1 class="slider-title">Your warehouse of quality screenplays</h1>
+                            <p class="slider-text d-none d-xl-block d-lg-block d-md-block">Get all the updates about upcoming movies from around the world.</p>
+                            <a href="film_scripts.html" class="btn btn-secondary">Explore</a>
+                        </div>
+                        <!-- /.slider-captions -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+

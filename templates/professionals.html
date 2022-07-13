@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrapper-content bg-white p-3 p-lg-5">
+                
+                <div class="row">
+                    {% for professional in professionals %}
+                   
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="post-block mb30">
+                            
+                            <div class="bg-white pinside40 outline">
+                                <a href="{{professional.name}}"><img src="{{professional.image.url}}" alt="" class="img-fluid"></a>
+                                <h2><a href="{{professional.name}}" class="title">{{professional.name}}</a></h2>
+                                <p>{{professional.description}}</p>
+                            
+                                <p class="meta">Talent: <span class="meta-date">{{professional.talent}}</span>From:<span class="meta-date">{{professional.country}}</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                   
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% include 'footer.html' %}
+
+{% endblock content %}

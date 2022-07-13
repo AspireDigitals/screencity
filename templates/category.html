@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="section-space80">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="mb60 text-center section-title">
+                    <!-- section title start-->
+                    <h1>Explore our top Categories</h1>
+                    <p>SCN network is a market place for movie scripts where you can buy, sell, or hire a professional screenplay writer It takes less than 2 minutes to post a gig on SCN. </strong></p>
+                </div>
+                <!-- /.section title start-->
+            </div>
+        </div>
+        <div class="" id="service">
+            <div class="row">
+                
+               {% for category in categorys %}
+
+               <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-12">
+                <div class="service-block-v3">
+                    <div class="icon mb30">
+                        <a href="{{category.title}}"> <img src="{{category.image.url}}" alt="Film Scripts"></a>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="service-title"><a href="film_scripts.html" class="title">{{category.title}}</a></h2>
+                    </div>
+                    <div class="service-rate-block">
+                        <p class="rate-text">{{category.subcategory}}</p>
+                    </div>
+                    <a href="/scripts" class="btn btn-secondary btn-block">View More</a>
+                </div>
+            </div>
+               
+               {% endfor %}
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

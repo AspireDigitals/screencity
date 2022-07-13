@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class=" ">
+  <!-- content start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="wrapper-content bg-white">
+          <div class="about-section p-5">
+            <div class="row">
+             {% for term in terms %}
+
+             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <h2 class="mb30">Who We Are?</h2>
+              <p class="lead mb30">
+                {{term.copyright}}
+              </p>
+             
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="mb60">
+                <h2 class="mb30">What We Offer?</h2>
+                <p class="lead mb30">
+                  {{term.offer}}
+                </p>
+                
+              </div>
+            </div>
+             
+            
+              <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="text-center section-space80">
+                  <h2>Our Vision &amp; Mission</h2>
+                  <p>
+                    {{about.vision}}
+                  </p>
+                </div>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock content %}

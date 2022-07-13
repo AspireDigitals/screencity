@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="section-space80">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="mb60 text-center section-title">
+                    <!-- section title start-->
+                    <h1>Latest Scripts from professionals</h1>
+                    <p> Our mission is to deliver quality scripts.</p>
+                </div>
+                <!-- /.section title start-->
+            </div>
+        </div>
+        <div class="row">
+            {% for script in scripts reversed %}
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="post-block mb30">
+                    <div class="bg-white pinside40 outline">
+                        <h2><a href="{{script.title}}" class="title">{{script.title}}</a></h2>
+                        <p>{{script.synopsis}}</p>
+                       
+                        <p class="meta">Sub Category:<span class="meta-date">{{script.subcategory}}</span><span class="meta-author">By<a href="/professionals">{{script.seller}}</a></span></p>
+                        <p class="meta"><span class="meta-date">selling at GhC: {{script.price}} </span><span class="meta-author">Posted on {{script.created_at}}</span></p>
+                        <a href="/like-post?script_id={{script.id}}" class="flex items-center space-x-2">
+                            <div class="p-2 rounded-full text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="15" height="15" class="">
+                                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                                </svg>
+                                {% if script.no_of_likes == 0 %}
+                                <p>No likes</p>
+                                {% elif script.no_of_likes == 1 %}
+                                <p>Liked by {{script.no_of_likes}} Person</p>
+                                {% else %}
+                                <p>Liked by {{script.no_of_likes}} People</p>
+                                {% endif %}
+                            </div>
+                            
+                        </a>
+                        <a href="{{script.title}}">View Script</a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+

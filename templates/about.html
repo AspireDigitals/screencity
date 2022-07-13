@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">About Us</li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="bg-white pinside30">
+          <div class="row align-items-center">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+              <h1 class="page-title">About Us</h1>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <div class="btn-action">
+                <a href="become_seller.html" class="btn btn-secondary">Become a seller</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class=" ">
+  <!-- content start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="wrapper-content bg-white">
+          <div class="about-section p-5">
+            <div class="row">
+             {% for about in abouts %}
+
+             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <h2 class="mb30">Who We Are?</h2>
+              <p class="lead mb30">
+                {{about.about}}
+              </p>
+             
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="mb60">
+                <h2 class="mb30">What We Offer?</h2>
+                <p class="lead mb30">
+                  {{about.offer}}
+                </p>
+                
+              </div>
+            </div>
+             
+            
+              <div class="offset-xl-2 col-xl-8 offset-lg-2 col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="text-center section-space80">
+                  <h2>Our Vision &amp; Mission</h2>
+                  <p>
+                    {{about.vision}}
+                  </p>
+                </div>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
