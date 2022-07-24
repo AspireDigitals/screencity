@@ -28,7 +28,7 @@ SECRET_KEY = ')s$dc+#=!+-y)t#feeg@4=e7(%#%ao69mw2wef(-@^j0(gw27('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['screencity.herokuapp.com']
 
 
 # Application definition
